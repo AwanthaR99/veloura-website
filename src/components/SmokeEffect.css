@@ -1,0 +1,35 @@
+/* Smoke Effect Styles - Updated */
+.smoke-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 180px;
+    filter: blur(15px); /* Made the blur a bit stronger */
+    z-index: 5; /* Ensures it sits above the background image */
+}
+
+.smoke-container span {
+    position: absolute;
+    bottom: 0;
+    /* Made the smoke a bit more visible */
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 50%;
+    animation: rise 10s infinite; /* Made the animation a bit slower */
+}
+
+/* This is the animation that makes the smoke rise and fade */
+@keyframes rise {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.8; /* Stays visible for longer */
+    }
+    100% {
+        transform: scale(3.5) translateY(-180px);
+        opacity: 0;
+    }
+}
